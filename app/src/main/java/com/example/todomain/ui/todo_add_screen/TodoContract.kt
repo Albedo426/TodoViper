@@ -14,17 +14,18 @@ interface TodoContract {
         var view: View?
         var interector: Interactor?
         var router: Router?
-        fun addRequest(data:Todo,context: Context)
+        fun addRequest(data:Todo,context: Context):Int
     }
 
     interface Interactor {
         var presenter: Presenter?
-        fun addedTodo(data:Todo,context: Context)
+        fun addedTodo(data:Todo,context: Context):Long
     }
 
     interface Router {
         companion object {
             fun configure(activity: TodoAddActivity) {}
         }
+        fun openMainPage(context: Context)
     }
 }

@@ -8,8 +8,13 @@ class TodoPresenter :
     override var view: TodoContract.View? = null
     override var interector: TodoContract.Interactor? = null
     override var router: TodoContract.Router? = null
-    override fun addRequest(data: Todo,context: Context) {
-        interector?.addedTodo(data,context)
+    override fun addRequest(data: Todo,context: Context): Int {
+        var id=0
+        interector?.addedTodo(data,context).let{
+            id= it?.toInt()!!
+            router?.openMainPage(context)
+        }
+        return id
     }
 
 }

@@ -13,7 +13,7 @@ abstract class TodoDataBase : RoomDatabase(){
 
     companion object {
         private var instance: TodoDataBase? = null
-        /*private val lock =Any()
+        private val lock =Any()
         operator fun invoke(context:Context) = instance ?: synchronized(lock){
             instance?:makeDataBase(context).also {
                 instance=it
@@ -23,23 +23,9 @@ abstract class TodoDataBase : RoomDatabase(){
         //synchronized threadlardan sadece biri erişir  işlemi bitinde diğerine geçicek
 
         private fun makeDataBase(context: Context)= Room.databaseBuilder(
-            context.applicationContext,
+            context,
             TodoDataBase::class.java,
-            "todo").build()
-
+            "todo.db").allowMainThreadQueries().build()
         //databaseyi oluşturan şey bu
-          */
-        fun invoke(context: Context): TodoDataBase? {
-
-            if (instance == null) {
-                instance = Room.databaseBuilder(
-                    context,
-                    TodoDataBase::class.java,
-                    "todo.db"
-                ).allowMainThreadQueries()
-                    .build()
-            }
-            return instance
-        }
     }
 }

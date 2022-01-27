@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".ui.main_screen.MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.todomain.ui.todo_add_screen
 
+import android.content.Context
+
 class TodoRouter : TodoContract.Router {
 
     companion object {
@@ -15,6 +17,9 @@ class TodoRouter : TodoContract.Router {
             presenter.interector = interactor
             interactor.presenter = presenter
         }
+    }
+    override fun openMainPage(context: Context) {
+        TodoAddActivity.launch(context)
     }
 
 }

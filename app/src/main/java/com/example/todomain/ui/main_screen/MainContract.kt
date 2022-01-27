@@ -6,7 +6,7 @@ import com.example.todomain.app.entity.Todo
 interface MainContract {
 
     interface View {
-        val contxt: Context
+        var context:Context
         var presenter: Presenter?
         fun showMain(argument: ArrayList<Todo>)
     }

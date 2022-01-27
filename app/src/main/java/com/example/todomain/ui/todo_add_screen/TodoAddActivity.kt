@@ -5,11 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.todomain.R
+import com.example.todomain.app.base.BaseActivity
 import com.example.todomain.app.entity.Todo
 import com.example.todomain.ui.main_screen.MainActivity
 import kotlinx.android.synthetic.main.activity_todo_add.*
 
-class TodoAddActivity : AppCompatActivity(), TodoContract.View {
+class TodoAddActivity : BaseActivity(), TodoContract.View {
 
     companion object {
         fun launch(context: Context) {
