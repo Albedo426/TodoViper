@@ -1,11 +1,11 @@
-package com.example.todomain.view
+package com.example.todomain.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.todomain.R
-import com.example.todomain.view.main.MainActivity
+import com.example.todomain.ui.main_screen.MainActivity
 
 class SplashActivity: AppCompatActivity() {
 

@@ -1,14 +1,13 @@
-package com.example.todomain.view.main
+package com.example.todomain.ui.main_screen
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.todomain.adapter.MainAdapter
+import com.example.todomain.ui.main_screen.adapter.MainAdapter
 import com.example.todomain.R
-import com.example.todomain.entity.Todo
-import com.example.todomain.router.MainRouter
+import com.example.todomain.app.entity.Todo
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {

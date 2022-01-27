@@ -1,9 +1,6 @@
-package com.example.todomain.presenter
+package com.example.todomain.ui.todo_add_screen
 
-import android.util.Log
-import com.example.todomain.entity.Todo
-import com.example.todomain.view.main.MainContract
-import com.example.todomain.view.todoAdd.TodoContract
+import com.example.todomain.app.entity.Todo
 
 class TodoPresenter :
     TodoContract.Presenter {

@@ -1,7 +1,6 @@
-package com.example.todomain.presenter
+package com.example.todomain.ui.main_screen
 
-import com.example.todomain.entity.Todo
-import com.example.todomain.view.main.MainContract
+import com.example.todomain.app.entity.Todo
 
 class MainPresenter :
     MainContract.Presenter {

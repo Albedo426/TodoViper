@@ -1,8 +1,7 @@
-package com.example.todomain.view.main
+package com.example.todomain.ui.main_screen
 
-import android.app.Activity
 import android.content.Context
-import com.example.todomain.entity.Todo
+import com.example.todomain.app.entity.Todo
 
 interface MainContract {
 

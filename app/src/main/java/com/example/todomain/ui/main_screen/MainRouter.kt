@@ -1,12 +1,7 @@
-package com.example.todomain.router
+package com.example.todomain.ui.main_screen
 
-import android.app.Activity
 import android.content.Context
-import com.example.todomain.interactor.MainInteractor
-import com.example.todomain.presenter.MainPresenter
-import com.example.todomain.view.main.MainContract
-import com.example.todomain.view.main.MainActivity
-import com.example.todomain.view.todoAdd.TodoAddActivity
+import com.example.todomain.ui.todo_add_screen.TodoAddActivity
 
 class MainRouter: MainContract.Router {
 

@@ -1,4 +1,4 @@
-package com.example.todomain.adapter
+package com.example.todomain.ui.main_screen.adapter
 
 
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todomain.R
 import com.example.todomain.databinding.MainItemListBinding
-import com.example.todomain.entity.Todo
+import com.example.todomain.app.entity.Todo
 
 class MainAdapter(val newsList: ArrayList<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 

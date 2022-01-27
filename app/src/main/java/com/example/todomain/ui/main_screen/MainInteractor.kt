@@ -1,8 +1,7 @@
-package com.example.todomain.interactor
+package com.example.todomain.ui.main_screen
 
 import android.content.Context
-import com.example.todomain.entity.Todo
-import com.example.todomain.view.main.MainContract
+import com.example.todomain.app.entity.Todo
 
 class MainInteractor : MainContract.Interactor {
 

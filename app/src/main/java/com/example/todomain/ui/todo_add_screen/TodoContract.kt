@@ -1,8 +1,7 @@
-package com.example.todomain.view.todoAdd
+package com.example.todomain.ui.todo_add_screen
 
-import android.app.Activity
 import android.content.Context
-import com.example.todomain.entity.Todo
+import com.example.todomain.app.entity.Todo
 
 interface TodoContract {
 

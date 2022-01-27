@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TodoMain">
         <activity
-            android:name=".view.todoAdd.TodoAddActivity"
+            android:name=".ui.todo_add_screen.TodoAddActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".ui.main_screen.MainActivity"
             android:windowSoftInputMode="stateHidden|adjustPan"></activity>
     </application>
 

@@ -1,10 +1,4 @@
-package com.example.todomain.router
-
-import android.content.Context
-import com.example.todomain.interactor.TodoInteractor
-import com.example.todomain.presenter.TodoPresenter
-import com.example.todomain.view.todoAdd.TodoAddActivity
-import com.example.todomain.view.todoAdd.TodoContract
+package com.example.todomain.ui.todo_add_screen
 
 class TodoRouter : TodoContract.Router {
 
