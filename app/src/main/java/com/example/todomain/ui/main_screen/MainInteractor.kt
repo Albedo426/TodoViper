@@ -1,8 +1,8 @@
 package com.example.todomain.ui.main_screen
 
 import android.content.Context
-import com.example.todomain.app.entity.Todo
-import com.example.todomain.app.repository.TodoDataBase
+import com.example.todomain.app.data.entity.Todo
+import com.example.todomain.app.services.repository.TodoDataBase
 
 class MainInteractor : MainContract.Interactor {
 

@@ -1,9 +1,8 @@
 package com.example.todomain.ui.todo_add_screen
 
 import android.content.Context
-import android.util.Log
-import com.example.todomain.app.entity.Todo
-import com.example.todomain.app.repository.TodoDataBase
+import com.example.todomain.app.data.entity.Todo
+import com.example.todomain.app.services.repository.TodoDataBase
 
 class TodoInteractor : TodoContract.Interactor {
     override var presenter: TodoContract.Presenter? = null

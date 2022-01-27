@@ -1,9 +1,9 @@
-package com.example.todomain.app.repository
+package com.example.todomain.app.services.repository
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.todomain.app.entity.Todo
+import com.example.todomain.app.data.entity.Todo
 @Dao
 interface TodoDAO {
     @Insert

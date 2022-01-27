@@ -2,11 +2,10 @@ package com.example.todomain.ui.todo_add_screen
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.todomain.R
 import com.example.todomain.app.base.BaseActivity
-import com.example.todomain.app.entity.Todo
+import com.example.todomain.app.data.entity.Todo
 import com.example.todomain.ui.main_screen.MainActivity
 import kotlinx.android.synthetic.main.activity_todo_add.*
 

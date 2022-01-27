@@ -1,10 +1,10 @@
-package com.example.todomain.app.repository
+package com.example.todomain.app.services.repository
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.todomain.app.entity.Todo
+import com.example.todomain.app.data.entity.Todo
 
 @Database(entities = [Todo::class], version = 1)
 abstract class TodoDataBase : RoomDatabase(){
