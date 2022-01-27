@@ -10,6 +10,8 @@ import com.example.todomain.app.base.BaseActivity
 import com.example.todomain.app.data.entity.Todo
 import kotlinx.android.synthetic.main.activity_main.*
 
+//View görüntü işlemleri yapılır datalar gösterilir
+//Sadece presenter ile iletişimi vardır
 class MainActivity() : BaseActivity(), MainContract.View {
 
     companion object {

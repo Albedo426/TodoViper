@@ -1,4 +1,4 @@
-package com.example.todomain.app.services.repository
+package com.example.todomain.app.services.repository.todo_database_repo
 
 import android.content.Context
 import androidx.room.Database
@@ -15,8 +15,8 @@ abstract class TodoDataBase : RoomDatabase(){
         private var instance: TodoDataBase? = null
         private val lock =Any()
         operator fun invoke(context:Context) = instance ?: synchronized(lock){
-            instance?:makeDataBase(context).also {
-                instance=it
+            instance ?: makeDataBase(context).also {
+                instance =it
             }
             //also bunu yaqp sonra da bunu yap demek eğer olmadıysa hiç yapmaz  olursa yapar gibi çalışır
         }

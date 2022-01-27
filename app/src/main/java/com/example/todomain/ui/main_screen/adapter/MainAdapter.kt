@@ -9,6 +9,7 @@ import com.example.todomain.R
 import com.example.todomain.databinding.MainItemListBinding
 import com.example.todomain.app.data.entity.Todo
 
+//adapter
 class MainAdapter(val newsList: ArrayList<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

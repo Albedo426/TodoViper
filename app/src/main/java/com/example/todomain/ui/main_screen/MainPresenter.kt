@@ -2,6 +2,10 @@ package com.example.todomain.ui.main_screen
 
 import com.example.todomain.app.data.entity.Todo
 
+//presenter  uygulamanın iskeletidir tüm işlemler istenir yapılır
+//Router,Intecatora bağlıdır
+//Sayfaları yönlendirme işlemi yapılır
+//ıntecatordan veri istenir veri alınır gösterilir
 class MainPresenter() :
     MainContract.Presenter {
     override var view: MainContract.View? = null

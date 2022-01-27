@@ -2,6 +2,7 @@ package com.example.todomain.ui.todo_add_screen
 
 import android.content.Context
 import com.example.todomain.app.data.entity.Todo
+import com.example.todomain.ui.todo_add_screen.repostory.todo_todo_add_dao.TodoDAO
 
 interface TodoContract {
 
@@ -19,6 +20,7 @@ interface TodoContract {
 
     interface Interactor {
         var presenter: Presenter?
+        var todoDAO: TodoDAO?
         fun addedTodo(data:Todo,context: Context):Long
     }
 

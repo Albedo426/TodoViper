@@ -2,6 +2,7 @@ package com.example.todomain.ui.main_screen
 
 import android.content.Context
 import com.example.todomain.app.data.entity.Todo
+import com.example.todomain.ui.main_screen.repostory.todo_main_dao.TodoDAO
 
 interface MainContract {
 
@@ -20,6 +21,7 @@ interface MainContract {
     }
     interface Interactor {
         var presenter: Presenter?
+        var todoDAO: TodoDAO?
         fun fetchMain(context: Context)
     }
     interface Router {
