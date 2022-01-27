@@ -27,7 +27,7 @@ class TodoAddActivity : AppCompatActivity(), TodoContract.View {
         setContentView(R.layout.activity_todo_add)
 
         floatingActionButton.setOnClickListener {
-            presenter?.addRequest(Todo(editTextTodo.text.toString().trim()))
+            presenter?.addRequest(Todo(editTextTodo.text.toString().trim()),this)
             MainActivity.launch(this)
         }
     }

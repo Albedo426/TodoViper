@@ -23,7 +23,7 @@ class MainAdapter(val newsList: ArrayList<Todo>) : RecyclerView.Adapter<MainAdap
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        p0.view.txt.text = newsList[p1].title
+        p0.view.txt.text = newsList[p1].text
     }
 
     class ViewHolder(var view: MainItemListBinding):RecyclerView.ViewHolder(view.root) {

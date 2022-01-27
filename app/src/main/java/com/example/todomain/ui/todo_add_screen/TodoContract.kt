@@ -14,12 +14,12 @@ interface TodoContract {
         var view: View?
         var interector: Interactor?
         var router: Router?
-        fun addRequest(data:Todo)
+        fun addRequest(data:Todo,context: Context)
     }
 
     interface Interactor {
         var presenter: Presenter?
-        fun addedTodo(data:Todo)
+        fun addedTodo(data:Todo,context: Context)
     }
 
     interface Router {
