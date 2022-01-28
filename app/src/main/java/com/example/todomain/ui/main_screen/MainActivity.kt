@@ -20,19 +20,16 @@ class MainActivity() : AppCompatActivity(), MainContract.View {
         }
     }
     var presenter: MainContract.Presenter? = null
-    override var context: Context =this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         MainRouter.configure(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView?.layoutManager = LinearLayoutManager(this)
-        presenter?.requestMain()
-
+        presenter?.requestMain(this)
         floatingActionButton2.setOnClickListener {
-         presenter?.goToAddTodoPage()
+         presenter?.goToAddTodoPage(this)
         }
-
     }
     override fun showMain(argument: List<Todo>) {
         recyclerView?.adapter = MainAdapter(argument)

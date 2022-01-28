@@ -7,19 +7,19 @@ import javax.inject.Singleton
 interface MainContract {
 
     interface View {
-        var context:Context
+       // var context:Context
        // var presenter: Presenter?
         fun showMain(argument: List<Todo>)
     }
 
     interface Presenter {
-        fun goToAddTodoPage()
+        fun goToAddTodoPage(context: Context)
         fun mainFetched(argument: List<Todo>)
-        fun requestMain()
+        fun requestMain(context: Context)
     }
 
     interface Interactor {
-        var presenter: Presenter?
+       // var presenter: Presenter?
         fun fetchMain(context: Context)
     }
 

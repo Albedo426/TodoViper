@@ -9,7 +9,6 @@ class MainRouter(private val activity: MainActivity): MainContract.Router {
     companion object {
         fun configure(activity: MainActivity) {
             val view = activity
-
             val interactor = MainInteractor(TodoApiServices())//MainContract.interactor çağırılınca /7MainInteractor gelicek
             val router = MainRouter(activity)
             val presenter = MainPresenter(router,interactor)
@@ -19,6 +18,6 @@ class MainRouter(private val activity: MainActivity): MainContract.Router {
         }
     }
     override fun openTodoAddPage(context: Context) {
-        TodoAddActivity.launch(activity.context)
+        TodoAddActivity.launch(context)
     }
 }

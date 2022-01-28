@@ -13,13 +13,13 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class MainInteractor (private val todoApiServices:TodoApiServices): MainContract.Interactor {
+class MainInteractor (private val todoApiServices:TodoApiServices ): MainContract.Interactor {
     private val disposse= CompositeDisposable()
 
     override fun fetchMain(context: Context) {
         getDataFromAPI(context);
     }
-    override var presenter: MainContract.Presenter? = null
+     var presenter: MainContract.Presenter? = null
 
     private fun getDataFromSQLite(context: Context){//çekilecekse diye ekledim ama çekme yapmadım
         val todoDatabase = TodoDataBase.invoke(context)
@@ -39,7 +39,7 @@ class MainInteractor (private val todoApiServices:TodoApiServices): MainContract
                         val list=t.data.map { it.attributes.toTodo() }
                        // Toast.makeText(getApplication(), "Api", Toast.LENGTH_SHORT).show()
                         storeInSQLite(list,context)
-                       // Log.e("TAG", "onSuccess: ", )
+                        Log.e("TAG", "onSuccess: "+list.size)
                     }
                     override fun onError(e: Throwable) {
                         //countryLooding.value=false
