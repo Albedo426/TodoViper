@@ -2,6 +2,7 @@ package com.example.todomain.app.base
 
 import androidx.appcompat.app.AppCompatActivity
 
+
 open class BaseActivity: AppCompatActivity() {
 
 }

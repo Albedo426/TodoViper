@@ -11,10 +11,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class MainInteractor : MainContract.Interactor {
-    private val todoApiServices=TodoApiServices()
+class MainInteractor (private val todoApiServices:TodoApiServices): MainContract.Interactor {
     private val disposse= CompositeDisposable()
+
     override fun fetchMain(context: Context) {
         getDataFromAPI(context);
     }
