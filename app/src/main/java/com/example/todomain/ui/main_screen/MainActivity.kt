@@ -32,7 +32,7 @@ class MainActivity() : BaseActivity(), MainContract.View {
         }
 
     }
-    override fun showMain(argument: ArrayList<Todo>) {
+    override fun showMain(argument: List<Todo>) {
         recyclerView?.adapter = MainAdapter(argument)
     }
 }

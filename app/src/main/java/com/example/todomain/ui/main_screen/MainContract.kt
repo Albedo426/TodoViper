@@ -8,11 +8,11 @@ interface MainContract {
     interface View {
         var context:Context
         var presenter: Presenter?
-        fun showMain(argument: ArrayList<Todo>)
+        fun showMain(argument: List<Todo>)
     }
     interface Presenter {
         fun goToAddTodoPage();
-        fun mainFetched(argument: ArrayList<Todo>)
+        fun mainFetched(argument: List<Todo>)
         var view: View?
         var interector: Interactor?
         var router: Router?

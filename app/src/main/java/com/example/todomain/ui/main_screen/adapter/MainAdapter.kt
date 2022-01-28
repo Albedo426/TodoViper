@@ -9,7 +9,7 @@ import com.example.todomain.R
 import com.example.todomain.databinding.MainItemListBinding
 import com.example.todomain.app.data.entity.Todo
 
-class MainAdapter(val newsList: ArrayList<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter(val newsList: List<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //val view=LayoutInflater.from(parent.context).inflate(R.layout.item_country,parent,false)

@@ -13,7 +13,7 @@ class MainPresenter() :
         val view = view ?: return
         interector?.fetchMain(view.context)
     }
-    override fun mainFetched(argument:  ArrayList<Todo>) {//sor nasıl olucak enttitiynnin burda olmaması gerekiyor dto mu yapıcam
+    override fun mainFetched(argument:  List<Todo>) {//sor nasıl olucak enttitiynnin burda olmaması gerekiyor dto mu yapıcam
         view?.showMain(argument)
     }
 
