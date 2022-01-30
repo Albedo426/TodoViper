@@ -7,26 +7,30 @@ import com.example.todomain.app.data.dto.todo_get_dto.toTodo
 import com.example.todomain.app.data.entity.Todo
 import com.example.todomain.app.services.repository.api.TodoApiServices
 import com.example.todomain.app.services.repository.room_database.TodoDataBase
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class MainInteractor (private val todoApiServices:TodoApiServices ): MainContract.Interactor {
+@Singleton
+class MainInteractor @Inject constructor(private val todoApiServices:TodoApiServices ): MainContract.Interactor {
     private val disposse= CompositeDisposable()
 
     override fun fetchMain(context: Context) {
+        Log.e("TAG", "fetchMain: ", )
         getDataFromAPI(context);
     }
-     var presenter: MainContract.Presenter? = null
+    override  var presenter: MainContract.Presenter? = null
 
     private fun getDataFromSQLite(context: Context){//çekilecekse diye ekledim ama çekme yapmadım
         val todoDatabase = TodoDataBase.invoke(context)
         showCountryies(todoDatabase.todoDao().getAllTodo())
     }
     private fun showCountryies(list: List<Todo>){
-        presenter?.mainFetched(list)
+        presenter!!.mainFetched(list)
     }
     private fun getDataFromAPI(context:Context){
         disposse.add(
