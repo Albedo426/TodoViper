@@ -9,7 +9,7 @@ import com.example.todomain.R
 import com.example.todomain.databinding.MainItemListBinding
 import com.example.todomain.app.data.entity.Todo
 
-class MainAdapter(val newsList: List<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter(val newsList: ArrayList<Todo>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //val view=LayoutInflater.from(parent.context).inflate(R.layout.item_country,parent,false)
@@ -17,7 +17,11 @@ class MainAdapter(val newsList: List<Todo>) : RecyclerView.Adapter<MainAdapter.V
         val view =DataBindingUtil.inflate<MainItemListBinding>(infilater,R.layout.main_item_list,parent,false)
         return ViewHolder(view)
     }
-
+    fun updateCounryList(newcList:List<Todo>){
+        newsList.clear();
+        newsList.addAll(newcList)
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int {
         return newsList.count()
     }

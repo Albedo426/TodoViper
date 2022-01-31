@@ -4,7 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todomain.ui.main_screen.adapter.MainAdapter
@@ -18,8 +21,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity() : AppCompatActivity(), MainContract.View {
-
-
+    private   var mainAdapter= MainAdapter(arrayListOf())
     companion object {
         fun launch(context: Context) {
             val intent = Intent(context, MainActivity::class.java)
@@ -28,21 +30,27 @@ class MainActivity() : AppCompatActivity(), MainContract.View {
     }
     @Inject
     lateinit var  presenter: MainContract.Presenter
-
     override fun onCreate(savedInstanceState: Bundle?) {
        // MainRouter.configure(this)
         super.onCreate(savedInstanceState)
         Log.e("TAG", "onCreate: ", )
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter=mainAdapter
         presenter.requestMain(this)
         floatingActionButton2.setOnClickListener {
             presenter.goToAddTodoPage(this)
         }
+        observeLiveData()
     }
-    override fun showMain(argument: List<Todo>) {
-        Log.e("TAG", "showMain: "+argument.size)
-        val l =MainAdapter(argument)
-           recyclerView.adapter = MainAdapter(argument)
+    override fun observeLiveData(){
+        presenter.todoList.observe(this, Observer {list->
+            list?.let {
+                Log.e("TAG", "showMain: "+list.size)
+                mainAdapter.updateCounryList(list)
+            }
+        })
     }
+
+
 }

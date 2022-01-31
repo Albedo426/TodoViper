@@ -1,25 +1,14 @@
 package com.example.todomain.ui.todo_add_screen
 
 import android.content.Context
+import com.example.todomain.ui.main_screen.MainActivity
+import javax.inject.Singleton
 
-class TodoRouter : TodoContract.Router {
+@Singleton
+class TodoRouter(private val activity: TodoAddActivity) : TodoContract.Router {
 
-    companion object {
-        fun configure(activity: TodoAddActivity) {
-            val view = activity
-            val presenter = TodoPresenter()
-            val interactor = TodoInteractor()
-            val router = TodoRouter()
-
-            view.presenter = presenter
-            presenter.view = view
-            presenter.router = router
-            presenter.interector = interactor
-            interactor.presenter = presenter
-        }
-    }
     override fun openMainPage(context: Context) {
-        TodoAddActivity.launch(context)
+        MainActivity.launch(context)
     }
 
 }

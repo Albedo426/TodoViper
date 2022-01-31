@@ -9,11 +9,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class TodoInteractor : TodoContract.Interactor {
-    override var presenter: TodoContract.Presenter? = null
-
-    private val todoApiServices=TodoApiServices()
+@Singleton
+class TodoInteractor @Inject constructor(private val todoApiServices:TodoApiServices ) : TodoContract.Interactor {
     private val disposse= CompositeDisposable()
     override fun addedTodo(data: Todo,context: Context): Long {
         //added todo eklendi

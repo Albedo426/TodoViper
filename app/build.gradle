@@ -41,6 +41,7 @@ android {
 dependencies {
     def retrofitVersion = '2.9.0'
     def rxJavaVersion = '2.1.1'
+    def lifeCycleExtensionVersion = '1.1.1'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -56,6 +57,12 @@ dependencies {
     // Dagger 2
     implementation("com.google.dagger:hilt-android:2.40.5")
     kapt("com.google.dagger:hilt-android-compiler:2.40")
+
+
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
 
     implementation 'com.google.dagger:dagger:2.40.5'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.38.1'

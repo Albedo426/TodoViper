@@ -7,8 +7,11 @@ import com.example.todomain.R
 import com.example.todomain.app.base.BaseActivity
 import com.example.todomain.app.data.entity.Todo
 import com.example.todomain.ui.main_screen.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_todo_add.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class TodoAddActivity : BaseActivity(), TodoContract.View {
 
     companion object {
@@ -17,17 +20,15 @@ class TodoAddActivity : BaseActivity(), TodoContract.View {
             context.startActivity(intent)
         }
     }
-
-    override var presenter: TodoContract.Presenter? = null
-    override val context: Context = this
+    @Inject
+    lateinit var presenter: TodoContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        TodoRouter.configure(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo_add)
 
         floatingActionButton.setOnClickListener {
-            presenter?.addRequest(Todo(editTextTodo.text.toString().trim()),this)
+            presenter.addRequest(Todo(editTextTodo.text.toString().trim()),this)
             MainActivity.launch(this)
         }
     }
