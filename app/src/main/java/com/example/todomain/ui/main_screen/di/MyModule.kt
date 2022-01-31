@@ -15,25 +15,24 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 class MyModule(){
-    val activity=MainActivity()
-    val view =activity
-    @Singleton
+
+    @ActivityScoped
     @Provides
     fun bindingMainInteractor():MainContract.Interactor{
         return MainInteractor(TodoApiServices())
     }
-    @Singleton
+    @ActivityScoped
     @Provides
-    fun bindingMainRouter():MainContract.Router{
-        return MainRouter(activity)
+    fun bindingMainRouter(mainActivity: MainActivity):MainContract.Router{
+        return MainRouter(mainActivity)
     }
-    @Singleton
+    @ActivityScoped
     @Provides
-    fun bindingMainPresenter(): MainContract.Presenter{
-        return  MainPresenter(bindingMainRouter(),bindingMainInteractor(),activity)
+    fun bindingMainPresenter(mainActivity: MainActivity): MainContract.Presenter{
+        return  MainPresenter(bindingMainRouter(mainActivity),bindingMainInteractor(),mainActivity)
     }
 
-    @Singleton
+    @ActivityScoped
     @Provides
     fun bindingMainView(): MainContract.View {
         return MainActivity()
