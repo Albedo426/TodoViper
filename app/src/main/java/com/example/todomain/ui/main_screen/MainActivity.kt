@@ -8,10 +8,10 @@ import com.example.todomain.ui.main_screen.adapter.MainAdapter
 import com.example.todomain.R
 import com.example.todomain.app.base.BaseActivity
 import com.example.todomain.app.data.entity.Todo
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.todomain.databinding.ActivityMainBinding
 
 class MainActivity() : BaseActivity(), MainContract.View {
-
+    private lateinit var binding: ActivityMainBinding
     companion object {
         fun launch(context: Context) {
             val intent = Intent(context, MainActivity::class.java)
@@ -23,16 +23,19 @@ class MainActivity() : BaseActivity(), MainContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         MainRouter.configure(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        recyclerView?.layoutManager = LinearLayoutManager(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         presenter?.requestMain()
 
-        floatingActionButton2.setOnClickListener {
+        binding.floatingActionButton2.setOnClickListener {
          presenter?.goToAddTodoPage()
         }
 
     }
     override fun showMain(argument: List<Todo>) {
-        recyclerView?.adapter = MainAdapter(argument)
+        binding.recyclerView.adapter = MainAdapter(argument)
     }
 }

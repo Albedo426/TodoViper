@@ -1,4 +1,4 @@
 package com.example.todomain.ui.detail_activity
 
-class DetailActivityInteractor {
+class DetailActivityInteractor:DetailActivityContract.Interactor {
 }

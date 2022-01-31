@@ -1,31 +1,27 @@
-package com.example.todomain.ui.main_screen
+package com.example.todomain.ui.detail_activity
 
-import android.content.Context
-import com.example.todomain.app.data.entity.Todo
+import androidx.fragment.app.FragmentTransaction
+import com.example.todomain.ui.detail_activity.detail_fragment.DetailFragment
+import com.example.todomain.ui.main_screen.MainActivity
 
-interface MainContract {
+interface DetailActivityContract {
 
     interface View {
-        var context:Context
+       // var context:Context
         var presenter: Presenter?
-        fun showMain(argument: List<Todo>)
+        fun showData()
     }
     interface Presenter {
-        fun goToAddTodoPage();
-        fun mainFetched(argument: List<Todo>)
-        var view: View?
-        var interector: Interactor?
         var router: Router?
-        fun requestMain()
+        fun openDetail(fragment: FragmentTransaction, text:String);
     }
     interface Interactor {
-        var presenter: Presenter?
-        fun fetchMain(context: Context)
+      //  var presenter: Presenter?
     }
     interface Router {
         companion object {
             fun configure(activity: MainActivity) {}
         }
-         fun openTodoAddPage(context: Context)
+         fun openTodoAddPage(fragment: FragmentTransaction,myFragment: DetailFragment)
     }
 }

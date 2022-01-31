@@ -1,23 +1,21 @@
-package com.example.todomain.ui.main_screen
+package com.example.todomain.ui.detail_activity
 
-import com.example.todomain.app.data.entity.Todo
+import android.os.Bundle
+import androidx.fragment.app.FragmentTransaction
+import com.example.todomain.ui.detail_activity.detail_fragment.DetailFragment
 
-class MainPresenter() :
-    MainContract.Presenter {
-    override var view: MainContract.View? = null
-    override var interector: MainContract.Interactor? = null
-    override var router: MainContract.Router? = null
+class DetailActivityPresenter() :
+    DetailActivityContract.Presenter {
+    override var router: DetailActivityContract.Router? = null
+    override fun openDetail(fragment: FragmentTransaction,text:String) {
+        val bundle = Bundle()
+        bundle.putString("text",text)
 
+        val myFragment= DetailFragment();
+        myFragment.arguments=bundle
 
-    override fun requestMain() {
-        val view = view ?: return
-        interector?.fetchMain(view.context)
+        router?.openTodoAddPage(fragment,myFragment)
     }
-    override fun mainFetched(argument:  List<Todo>) {//sor nasıl olucak enttitiynnin burda olmaması gerekiyor dto mu yapıcam
-        view?.showMain(argument)
-    }
 
-    override fun goToAddTodoPage(){
-        view?.context?.let { router?.openTodoAddPage(it) }
-    }
+
 }

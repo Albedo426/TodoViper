@@ -1,11 +1,10 @@
-package com.example.todomain.ui.detail_fragment
+package com.example.todomain.ui.detail_activity.detail_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.todomain.databinding.ActivityDetailBinding
 import com.example.todomain.databinding.FragmentDetailBinding
 
 

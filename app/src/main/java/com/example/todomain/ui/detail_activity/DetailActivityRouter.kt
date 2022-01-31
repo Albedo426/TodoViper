@@ -1,25 +1,22 @@
-package com.example.todomain.ui.main_screen
+package com.example.todomain.ui.detail_activity
 
-import android.content.Context
-import com.example.todomain.ui.todo_add_screen.TodoAddActivity
+import androidx.fragment.app.FragmentTransaction
+import com.example.todomain.R
+import com.example.todomain.ui.detail_activity.detail_fragment.DetailFragment
 
-class MainRouter: MainContract.Router {
+class DetailActivityRouter: DetailActivityContract.Router {
 
     companion object {
-        fun configure(activity: MainActivity) {
+        fun configure(activity: DetailActivity) {
             val view = activity
-            val presenter = MainPresenter()
-            val interactor = MainInteractor()
-            val router = MainRouter()
-
+            val presenter = DetailActivityPresenter()
+            val router = DetailActivityRouter()
             view.presenter = presenter
-            presenter.view = view
             presenter.router = router
-            presenter.interector = interactor
-            interactor.presenter = presenter
         }
     }
-    override fun openTodoAddPage(context: Context) {
-        TodoAddActivity.launch(context)
+    override fun openTodoAddPage(fragment: FragmentTransaction,myFragment:DetailFragment) {
+        fragment.replace(R.id.fragmentContainerView,myFragment)
+        fragment.commit()
     }
 }
